@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML5 Video Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="video-player">
+        <div class="video-wrapper">
+            <video class="video-element" preload="metadata">
+                <source src="https://anthonygiretti.blob.core.windows.net/videos/earth.mp4" type="video/mp4">
+
+                Your browser doesn't support the video tag.
+            </video>
+
+            <div class="video-controls">
+                <div class="progress-bar-fill" style="width:0;"></div>
+
+                <button class="btn btn-backward"><span class="fa fa-backward"></span></button>
+
+                <button class="btn btn-play"><span class="fa fa-play"></span></button>
+
+                <button class="btn btn-forward"><span class="fa fa-forward"></span></button>
+
+                <button class="btn btn-stop"><span class="fa fa-stop"></span></button>
+
+                <button class="btn btn-reset" hidden><span class="fa fa-undo"></span></button>
+
+                <span id="curtimetext">00:00</span> / <span id="durtimetext">00:00</span>
+
+                <button class="btn btn-mute"><span class="fa fa-volume-up"></span></button>
+
+                <input type="range" class="slider-volume" min="0" max="100" value="100" />
+
+                <button class="btn btn-comments"><span class="fa fa-comments"></span></button>
+
+                <button class="btn btn-expand"><span class="fa fa-expand"></span></button>
+            </div>
+        </div>
+
+        <div class="comments-box" style="display:none;height:auto;">
+            <div class="comments-wrapper">
+                <iframe height="100%" src="https://www.youtube.com/live_chat?v=uIVWJHsaz7k&embed_domain=local.demo"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <!-- <div class="comments-history">
+                </div>
+                <div class="comments-message">
+                    <textarea placeholder="Press enter to send comment..."></textarea>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        (function () {
+            setup({ video: { controlbar: { comments: true } } });
+        })();
+    </script>
+</body>
+
+</html>
